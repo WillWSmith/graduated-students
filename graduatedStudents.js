@@ -70,9 +70,29 @@ const students = [
     email: "angela@example.com",
     phone: "555-555-5555",
     graduated: true
-  },
+  }
 ];
 
 const graduatedStudents = (listOfStudents) => {
-//Implement function
+  let result = [];
+  for (let i = 0; i < listOfStudents.length; i++) {
+    const { name, graduated, email } = listOfStudents[i];
+    if (graduated === true) {
+      result.push(`${name} has graduated and their diploma will be sent to ${email}.`);
+    } else if (graduated === false) {
+      result.push(`${name} has not graduated yet, no diploma will be sent.`);
+    }
+  }
+  return result;
 };
+
+graduatedStudents(students);
+
+/* Output
+
+[
+  ‘Ankit has graduated and their diploma will be sent to ankit@example.com.’,
+  ‘Kayla has not graduated yet, no diploma will be sent.’,
+  ‘Charina has graduated and their diploma will be sent to charina@example.com.’
+]
+*/
